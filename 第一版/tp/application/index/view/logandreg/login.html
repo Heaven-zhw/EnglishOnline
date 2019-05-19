@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../../../.././vendor/csslog/bootstrap.css" />
+    <link rel="stylesheet" href="../../../.././vendor/csslog/login.css" />
+    <script type="text/javascript" src="../../../.././vendor/js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="../../../.././vendor/vendors/bootstrap/dist/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../../.././vendor/js/templet.js" ></script>
+    <script type="text/javascript" src="../../../.././vendor/js/hp.js" ></script>
+    <title></title>
+    <script>
+        function check(){
+            if($("#username").val()==""){
+                alert("用户名不可为空！");
+                return false;
+            }else if ($("#password").val()=="") {
+                alert("密码不可为空！");
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="main">
+    <nav class=" navbar-inverse" id="daohang">
+        <div class="daohang">
+            <div class="navbar-header clearfix">
+
+            </div>
+            <div class="collapse navbar-collapse" id="daohangtiao">
+            </div>
+        </div>
+        <div id="box">
+            <div class="box1 col-sm-2 col-xs-2">
+                <span id="X" class="glyphicon glyphicon-remove pull-right" ></span>
+            </div>
+            <div class="box2 col-sm-10 col-xs-10" >
+                <ul id="ul1" class="clearfix">
+
+                </ul>
+                <div id="wd1">
+                    <ul>
+
+                    </ul>
+                </div>
+                <div id="gy1" >
+                    <ul id="ul2">
+
+                    </ul>
+                </div>
+                <div id="gc" >
+                    <ul >
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <div class="main">
+        <div class="container">
+            <div class="c2">
+                <a href=""></a><span>
+                <img src="../../../.././vendor/img/qifeiye.png" >
+					</span>
+                <p>欢迎来到在线刷题神器</p>
+            </div>
+            <div class="c3">
+                <form action="http://127.0.0.1:8090/public/index.php/index/index/checklogin" method="post" onsubmit="return check()">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input type="text" class="form-control" id="username" name="username" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" class="form-control" id="password" name="password" value="">
+                    </div>
+                    <div class="checkbox">
+                        <!--label>
+                            <input type="checkbox"> 记住我（请在私人计算机上使用此功能）--
+                        </label-->
+                    </div>
+                    <div class="c3-1">
+                        <button id="denglu" type="submit" class="btn btn-default btn1">登录</button>
+                        <a href="http://127.0.0.1:8090/public/index.php/index/index/register" type="button" class="btn btn-default btn2">注册</a>
+                    </div>
+                    <div class="c3-3 clearfix">
+                        <a href="" class="pull-right">忘记密码？点这里找回</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
