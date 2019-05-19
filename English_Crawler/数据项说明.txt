@@ -1,0 +1,78 @@
+数据表设计
+
+1. alogin：管理员登录表
+id: 管理员id，主键自增
+username: 管理员用户名,唯一
+pwd:管理员登录密码，32位Hash值
+
+
+
+2. ulogin: 用户登录表
+id: 用户id，主键自增（外键，未添加）
+username: 普通用户用户名，唯一
+pwd:用户登录密码，32位Hash值
+
+
+3. userinfo: 用户信息表
+uid:用户id，主键
+phone:电话号码
+email:邮箱
+school:学校
+
+4.urlinfo 题目链接表(爬虫用)
+id:题目链接id,主键自增
+typeid:题型id（外键，未添加）
+quesurl:题目链接
+flag:是否爬取的标志位，0未爬取，1已爬取，2爬取错误
+gaintime:获取链接的时间
+
+
+5.squestion：选择题(选项)表
+id: 题目id，主键自增
+fromid:如果是爬取的题目，即为题目链接表的id，否则为null。(阅读完型可以多题对应1个id，不能唯一)
+title: 题干
+choiceA:A选项内容
+choiceB:B选项内容
+choiceC:C选项内容
+choiceD:D选项内容
+answer:答案
+analysis:解析
+typeid:题型id （外键，未添加）
+pid:来自的试卷的id（如果有）（外键，未添加）
+textid:文本id（如果有），（外键，未添加）
+remark:  保留项(暂定为标识位，可以标识是否是阅读或填空的第一道题)
+
+
+6.qCollection: 题目收藏表
+id:收藏表项id,主键自增
+uid:用户id （外键，未添加）
+qid:问题id  （外键，未添加）
+typeid:题型id   （外键，未添加） //降低了范式等级，以方便查询
+
+
+
+
+7.qtype试题题型表
+typeid:题型id,主键
+tname:题型类型
+
+
+8.paper试卷信息表
+id:试卷id，主键自增
+source:题目来源文字说明
+//class类别
+qnum:题目数
+pcontent:试卷内容， text类型             ************* 待解决
+	（存的是qid "12,13,14,15,16,17,18,19,20"）
+
+
+ 
+9.readtext阅读文本表
+id:文本id，主键自增
+text:文本内容
+qnum:一篇文本的题目数
+//qlist:
+
+
+
+
