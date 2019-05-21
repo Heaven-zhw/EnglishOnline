@@ -1,0 +1,207 @@
+[ 2019-05-15T15:36:25+08:00 ] 127.0.0.1 127.0.0.1 GET /public/
+[ log ] 127.0.0.1:8090/public/ [运行时间：1.176858s][吞吐率：0.85req/s] [内存消耗：1,336.64kb] [文件加载：49]
+[ info ] [ LANG ] F:\php\WWW\tp5\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1:8090',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\php\WWW\tp5\tp\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:F:\php\WWW\tp5\tp\public/../application/index\view\index\login.html[F:\php\WWW\tp5\tp\thinkphp\library\think\view\driver\Think.php:80]
+
+---------------------------------------------------------------
+[ 2019-05-15T15:36:50+08:00 ] 127.0.0.1 127.0.0.1 GET /public/
+[ log ] 127.0.0.1:8090/public/ [运行时间：0.078836s][吞吐率：12.68req/s] [内存消耗：1,336.88kb] [文件加载：49]
+[ info ] [ LANG ] F:\php\WWW\tp5\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1:8090',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\php\WWW\tp5\tp\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:F:\php\WWW\tp5\tp\public/../application/index\view\index\login.html[F:\php\WWW\tp5\tp\thinkphp\library\think\view\driver\Think.php:80]
+
+---------------------------------------------------------------
+[ 2019-05-15T15:37:14+08:00 ] 127.0.0.1 127.0.0.1 GET /public/
+[ log ] 127.0.0.1:8090/public/ [运行时间：0.105148s][吞吐率：9.51req/s] [内存消耗：1,336.88kb] [文件加载：49]
+[ info ] [ LANG ] F:\php\WWW\tp5\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1:8090',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\php\WWW\tp5\tp\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:F:\php\WWW\tp5\tp\public/../application/index\view\index\login.html[F:\php\WWW\tp5\tp\thinkphp\library\think\view\driver\Think.php:80]
+
+---------------------------------------------------------------
+[ 2019-05-15T15:37:46+08:00 ] 127.0.0.1 127.0.0.1 GET /public/
+[ log ] 127.0.0.1:8090/public/ [运行时间：0.099961s][吞吐率：10.00req/s] [内存消耗：1,336.99kb] [文件加载：49]
+[ info ] [ LANG ] F:\php\WWW\tp5\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1:8090',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\php\WWW\tp5\tp\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:test\index.html[F:\php\WWW\tp5\tp\thinkphp\library\think\view\driver\Think.php:80]
+
+---------------------------------------------------------------
+[ 2019-05-15T15:38:12+08:00 ] 127.0.0.1 127.0.0.1 GET /public/
+[ log ] 127.0.0.1:8090/public/ [运行时间：0.087238s][吞吐率：11.46req/s] [内存消耗：1,337.00kb] [文件加载：49]
+[ info ] [ LANG ] F:\php\WWW\tp5\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1:8090',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\php\WWW\tp5\tp\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:index.html[F:\php\WWW\tp5\tp\thinkphp\library\think\view\driver\Think.php:80]
+
+---------------------------------------------------------------
+[ 2019-05-15T15:38:54+08:00 ] 127.0.0.1 127.0.0.1 GET /public/
+[ log ] 127.0.0.1:8090/public/ [运行时间：0.228882s][吞吐率：4.37req/s] [内存消耗：1,429.48kb] [文件加载：49]
+[ info ] [ LANG ] F:\php\WWW\tp5\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1:8090',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\php\WWW\tp5\tp\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\php\WWW\tp5\tp\public/../application/index\view\test\index.html [ array (
+  0 => 'id',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-05-15T15:42:19+08:00 ] ::1 ::1 GET /public/
+[ log ] localhost:8090/public/ [运行时间：0.128473s][吞吐率：7.78req/s] [内存消耗：1,430.16kb] [文件加载：49]
+[ info ] [ LANG ] F:\php\WWW\tp5\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Phpstorm-b6161754=5330c403-6bdb-44d7-9f23-6c26c3feddb0; _ga=GA1.1.1195319806.1556801625; _gid=GA1.1.1225754104.1557751030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'purpose' => 'prefetch',
+  'connection' => 'close',
+  'host' => 'localhost:8090',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\php\WWW\tp5\tp\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\php\WWW\tp5\tp\public/../application/index\view\test\index.html [ array (
+  0 => 'id',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

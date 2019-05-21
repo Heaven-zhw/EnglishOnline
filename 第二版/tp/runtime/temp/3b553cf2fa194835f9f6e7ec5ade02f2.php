@@ -1,0 +1,513 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"F:\php\WWW\tp5\tp\public/../application/index/view/exam/dx.html";i:1558098262;}*/ ?>
+
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" /><title>
+    在线题库-单项选择
+</title>
+    <!--script>@import url("https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css")
+    </script-->
+    <link  rel="stylesheet" href="../../../.././vendor/css/publicCss.css" />
+    <link  rel="stylesheet" href="../../../.././vendor/css/navBar.css" />
+    <link  rel="stylesheet" href="../../../.././vendor/css/footerbottom.css" >
+    <link  rel="stylesheet" href="../../../.././vendor/css/publictest.css" />
+    <link  rel="stylesheet" href="../../../.././vendor/css/detailtitle.css" />
+    <link href="../../../.././vendor/css/cat_smoking.css" rel="stylesheet" />
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="../../../.././vendor/js/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../../../.././vendor/js/source.js" type="text/javascript"></script>
+    <script src="../../../.././vendor/js/publiconlinetest.js" type="text/javascript"></script>
+    <script src="../../../.././vendor/js/detail.js" type="text/javascript"></script>
+    <script src="../../../.././vendor/js/detali2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../../.././vendor/js/navbar.js" charset="gb2312"></script>
+    <script src="../../../.././vendor/js/layer.js" type="text/javascript"></script>
+
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        var timeID;
+        var stoptime;
+        var NowHour;
+        var hasdonenum;
+        var NowMinute;
+        var typess=1;
+        function showtimes(Hours1, Minutes1, Seconds1) {
+            NowHour = Hours1;
+            NowMinute = Minutes1;
+            var NowSecond = Seconds1;
+            NowSecond -= 1;
+            if (1 > NowSecond) {
+                NowSecond = 59;
+                NowMinute = NowMinute - 1;
+            }
+
+            if (0 > NowMinute) {
+                NowMinute = 59;
+                NowHour = NowHour - 1;
+            }
+            if (0 > NowHour) {
+                NowHour = 0;
+                NowMinute = 0;
+                NowSecond = 0;
+                clearTimeout(timerID);
+                $('#myModal1').modal();
+
+            } else {
+                $(".doproblemstimenow").html("<b>" + NowHour + "</b>时<b>" + NowMinute + "</b>分<b>" + NowSecond + "</b>秒");
+
+                stoptime = "showtimes(" + NowHour + "," + NowMinute + "," + NowSecond + ")";
+                timerID = setTimeout(stoptime, 1000);
+            }
+
+        }
+        function stoptime1(){
+            clearTimeout(timerID);
+        }
+        function rego(){
+            timerID = setTimeout(stoptime, 1000);
+        }
+        function finishtest() {
+            location.href = "http://127.0.0.1:8090/public/index.php/index/index/indexs"; //应该去提交表单
+        }
+        function hardgoindex() {
+            location.href = "http://127.0.0.1:8090/public/index.php/index/index/indexs";
+        }
+        function hardgologin() {
+            location.href = "http://127.0.0.1:8090/public/index.php/index/index/logout";
+        }
+        function hardgouserinfor() {
+            location.href = "http://127.0.0.1:8090/public/index.php/index/index/indexs/userinfor.php";
+        }
+        function hardfinish(){
+            clearTimeout(timerID);
+            $('#myModal2').modal();
+        }
+
+        function showitem(tid,xzid){
+            var num=parseInt(tid);  //returns  1234
+            var ka=num+"k";
+            $("#"+ka).attr("class","dopronumberconton4");
+            $("#"+tid).attr("useranswer",xzid);
+            $("#"+tid+" li[name='"+xzid+"']").attr("data-check",1);
+            $("#"+tid+" li[name='"+xzid+"']").attr("class","cont-topic-answer-this");
+            if(xzid=='A'){
+
+                $("#"+tid+" li[name='B']").attr("data-check",0);
+                $("#"+tid+" li[name='B']").attr("class","");
+                $("#"+tid+" li[name='C']").attr("data-check",0);
+                $("#"+tid+" li[name='C']").attr("class","");
+                $("#"+tid+" li[name='D']").attr("data-check",0);
+                $("#"+tid+" li[name='D']").attr("class","");
+
+            }else if(xzid=='B'){
+                $("#"+tid+" li[name='A']").attr("data-check",0);
+                $("#"+tid+" li[name='A']").attr("class","");
+                $("#"+tid+" li[name='C']").attr("data-check",0);
+                $("#"+tid+" li[name='C']").attr("class","");
+                $("#"+tid+" li[name='D']").attr("data-check",0);
+                $("#"+tid+" li[name='D']").attr("class","");
+            }else if(xzid=='C'){
+                $("#"+tid+" li[name='A']").attr("data-check",0);
+                $("#"+tid+" li[name='A']").attr("class","");
+                $("#"+tid+" li[name='B']").attr("data-check",0);
+                $("#"+tid+" li[name='B']").attr("class","");
+                $("#"+tid+" li[name='D']").attr("data-check",0);
+                $("#"+tid+" li[name='D']").attr("class","");
+            }else if(xzid=='D'){
+                $("#"+tid+" li[name='A']").attr("data-check",0);
+                $("#"+tid+" li[name='A']").attr("class","");
+                $("#"+tid+" li[name='C']").attr("data-check",0);
+                $("#"+tid+" li[name='C']").attr("class","");
+                $("#"+tid+" li[name='B']").attr("data-check",0);
+                $("#"+tid+" li[name='B']").attr("class","");
+            }
+        }
+
+        function checksubmit(){
+            clearTimeout(timerID);
+            $('#myModal4').modal();
+        }
+        var sumnum=<?php echo $sumtnum; ?>;
+        var rightnum;
+        var errornum=sumnum;
+        function checkright(){   //遍历所有的题目获取其错误的题目和正确的题目
+            //data-dismiss="modal"
+            $('#myModal4').modal('hide');
+            stoptime1();
+            var itmes;
+            var sanswer;
+            var uanswer;
+            rightnum=0;
+            errornum=sumnum;
+            var ka;
+            $(".cankaodaan").css("display","block");  //参考答案显示
+            $("#insterecttwo").css("display","none");
+            //把模态框给禁用
+            $("#index").attr("href","http://127.0.0.1:8090/public/index.php/index/index/indexs");
+            $("#index").attr("onclick","");
+            $("#userinforss").attr("href","http://127.0.0.1:8090/public/index.php/index/index/userinfo");
+            $("#userinforss").attr("onclick","");
+            $("#logout").attr("href","http://127.0.0.1:8090/public/index.php/index/index/logout");
+            $("#logout").attr("onclick","");
+            $(".xuanxinag").attr("onclick","");
+
+            for(var i=1;i<=sumnum;i++){
+                itmes=i+"t"; //得到题号
+                sanswer=$("#"+itmes).attr("answer");
+                uanswer= $("#"+itmes).attr("useranswer");
+                if(uanswer==sanswer){
+                    rightnum++;
+                    errornum--;
+                } else{     //出了错误  将该题变成红色
+                    ka=i+"k";
+                    $("#"+ka).css("background-color","#f6a395");//错误的答题卡进行显示
+                    $("#"+itmes+" span").css("color","#f6a395");       //错误的选择题进行红色显示
+                }
+            }//所有
+            var restime=30-NowMinute; //剩余时间
+            $("#err1").val(errornum);
+            $("#right1").val(rightnum);
+            $("#ptype").val(typess);
+            $("#time1").val(restime);
+        }
+        function sendtoserver(){
+            //为表单填充信息
+           $("#returnback").attr("onclick","hardgoindex()");
+            $.ajax({
+                type: 'post', // 提交方式 get/post
+                url: 'http://127.0.0.1:8090/public/index.php/index/index/usertest', // 需要提交的 url
+                data:{
+                    'errnum':$("#err1").val(),
+                    'rightnum':$("#right1").val(),
+                    'ptype': $("#ptype").val(),
+                    'testtime':$("#time1").val(),
+                    'pid':<?php echo $userpid; ?>
+                }
+            , success : function(data){
+                alert(data);
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status + "," + textStatus);
+                }
+            });
+           /* $("#testform").ajaxSubmit(function(message) {
+                // 对于表单提交成功后处理，message为表单正常提交后返回的内容
+                console.log(message);
+            });*/
+            return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+        }
+
+        function sendcollocation(bids){
+            //为表单填充信息
+
+            var bidss="c"+bids;
+            var bidsss="cc"+bids;
+            var tid1=$("#"+bidsss).attr('tid');
+            $("#"+bidsss).val(tid1);
+            $.ajax({
+                     type: 'post', // 提交方式 get/post
+                     url: 'http://127.0.0.1:8090/public/index.php/index/index/collocationdx', // 需要提交的 url
+                    data:{
+                        'pid1':tid1
+                    }
+            });
+           // alert(bidss);
+            $("#"+bidss).attr("disabled","disabled"); //注意重复收藏的问题
+            $("#"+bidss).text("已收藏");
+
+            return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+        }
+
+    </script>
+
+</head>
+
+<body style="background-color:#f5f5f5;" >
+<div class="nav">
+    <div class="nav-cont">
+
+        <ul class="nav-bar">
+            <li class="nav-logo-control"><a id="index" href="#" onclick="hardfinish()">在线英语考试</a></li>
+        </ul>
+
+        <ul class="nav-user">
+            <li class="nav-my">
+                <a><?php echo $username; ?>
+                    <img style="width:40px;height:40px;" src="../../../.././vendor/img/timg.jpg" onload='showtimes(0,20,0)'>
+
+                </a>
+                <ul class="nav-my-infor nav-my-center" style="display: none">
+                    <li class="nav-my-center-cont">
+                        <a  id="userinforss" href="#" onclick="hardfinish()">个人中心</a>
+                    </li>
+                    <li class="nav-my-center-cont">
+                        <a id="logout" href="#" onclick="hardfinish()">安全退出</a> <!---onclick="hardfinish()"-->
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="nav-perch-height"></div>
+
+<div id="nav">
+    <div class="chapContent">
+        <div class="contentright" id="contentright"style="position: static; top: 91.2px; right: 0px;">
+            <div class="doproblemstime" style="height: 80px">
+
+                <!-- 答题报告开始-->
+                <!-- <h1>答题报告</h1>-->
+                <!-- 答题报告结束-->
+
+                <!-- 答题倒计时正计时-->
+                <div class="doproblemstimeright">
+                    <span id="yongshi" style="display: none">用时</span>
+                    <span id="daojishi" style="display:block">倒计时</span>
+                    <!--  <span>做题用时</span>-->
+                    <span class="doproblemstimenow">
+
+                        </span>
+                </div>
+                <div class="doproblemstimeleft" data-toggle="modal" data-target="#myModal" onclick="stoptime1()">
+                    <div>
+                        <img src="../../../.././vendor/img/stop1.png" height="40px" width="40px">
+                        <span >暂停</span>
+                    </div>
+                </div>
+                <!-- 答题倒计时正计时结束-->
+            </div>
+            <div class="doproblemssheet" style="height: 40px">
+                <img src="../../../.././vendor/img/ka.jpg" style="height: 20px; width: 20px;">
+
+                <span>答题卡</span>
+                <b>   <span class="DoQuestionNum" id="sumnum">0</span>&nbsp;/&nbsp;<span id="havedone" class="allQuestionNUM">0</span></b>
+            </div>
+            <!--考试结果提示-->
+            <!--考试结果提示结束-->
+            <div id="ceshi"  style="display:none;"></div>
+
+            <div class="doproblemsnumber" id="answer_card">
+                <div class="dopronumbertype" showtypeid="1">单选</div>
+                <ul titletpye="1" showtypeid="172" class="dopronumbercont" id="pannelShowType172">
+                    <?php $__FOR_START_4900__=1;$__FOR_END_4900__=11;for($i=$__FOR_START_4900__;$i < $__FOR_END_4900__;$i+=1){ ?>
+                    <li titlenumber="<?php echo $i; ?>" titletpye="<?php echo $i; ?>" showtypeid="172" id="<?php echo $i; ?>k" class="">
+                        <?php echo $i; ?>
+                    </li>
+                    <?php } ?>
+
+                </ul>
+            </div>
+            <div class="doproblemsactive">
+                <div class="doproblemsactivered theirpapers"  id="insterecttwo"  style="display:block" onclick="checksubmit()">交卷</div>
+                <!--div-- class="doproblemsactiveblue nexttocontinue"  id="hold">下次继续</div-->
+                <div id="returnback" class="doproblemsactiveblue gettoback" onclick="hardfinish()">返回</div>
+            </div>
+        </div>
+        <div class="contentleft" id="contentleft">
+            <div class="contentlefttop"  id="contentlefttoptitletwo">
+                <div class="contentlefttoptitle">
+                    <i></i>
+                    <h2 id="Title_ChapterName" style="visibility:visible" ><?php echo $pname; ?></h2>
+
+                </div>
+                <!---考试模式下的说明显示--->
+                <span class="contentlefttopspan" id="contentlefttopspan"  style="display: none" >
+                    </span>
+                <!---考试模式下的说明显示结束--->
+            </div>
+
+
+
+            <!---考试结果下的分数显示结束--->
+            <div class="contentleftcont" id="exam">
+                <div style="height:20px;" class="contentleftconttitletop" titlenumber="1" data-type="9" questiontypes="1" showtypeid="172">
+
+                </div>
+                <?php if(is_array($dxlist) || $dxlist instanceof \think\Collection || $dxlist instanceof \think\Paginator): $i = 0; $__LIST__ = $dxlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ts): $mod = ($i % 2 );++$i;?>
+                <div class="DetailTitlecontent">
+                    <div class="DetailTitletitle">
+                        <div class="DetailTitletitlecont">
+                            <h4><i><?php echo $i; ?>[单选选择]</i>
+                                <?php echo $ts['title']; ?>
+                            </h4>
+                        </div>
+                        <div  class="DetailTitletitlecontmoreselect" data-type="2" >
+
+                            <ul id="<?php echo $i; ?>t" answer="<?php echo $ts['answer']; ?>" useranswer="" tid=<?php echo $ts['id']; ?>>
+                                <li  class="xuanxinag" name="A" data-check=0  data-value="A" data-type="9" ONCLICK="showitem('<?php echo $i; ?>t','A')">
+                                    <i> A</i>
+                                    <span> <?php echo $ts['choiceA']; ?></span>
+                                </li>
+                                <li class="xuanxinag" name="B" data-check=0  data-value="B" data-type="9" ONCLICK="showitem('<?php echo $i; ?>t','B')">
+                                    <i> B</i>
+                                    <span> <?php echo $ts['choiceB']; ?></span>
+                                </li>
+                                <li class="xuanxinag" name="C" data-check=0  data-value="C" data-type="9" ONCLICK="showitem('<?php echo $i; ?>t','C')">
+                                    <i> C</i>
+                                    <span> <?php echo $ts['choiceC']; ?></span>
+                                </li>
+                                <li class="xuanxinag" name="D" data-check=0  data-value="D" data-type="9" ONCLICK="showitem('<?php echo $i; ?>t','D')">
+                                    <i> D</i>
+                                    <span> <?php echo $ts['choiceD']; ?></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="DetailTitletitleanswermoreselect" data-type="2">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="a-questionToolbar">
+                            <div >
+                                <div class="cankaodaan" style="display:none" >
+                                    <div style="padding-left:10px;width:800px">
+                                    <span class="spantext">参考答案：</span>
+                                    <span class="sanwer" data-id="{ts.ans}">
+                                            <?php echo $ts['answer']; ?>
+                                        </span>
+                                    </div>
+                                    <div style="padding-left:10px;width:800px">
+                                        <?php echo $ts['analysis']; ?>
+                                    </div>
+
+                                        <form id="colformc<?php echo $i; ?>" class="form-inline" role="form" action="#" method="post" onsubmit="sendcollocation(<?php echo $i; ?>);return false;">
+                                            <div style="text-align:right;width:800px;">
+                                                <input id="cc<?php echo $i; ?>" type="hidden" value="" hidden="hidden" name="tid" tid="<?php echo $ts['id']; ?>">
+                                                <button id="c<?php echo $i; ?>" type="submit" name="1" class="btn btn-success" style="padding: 10px 30px; ">收藏</button>
+                                            </div>
+                                        </form>
+                                </div>​
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="suspensionright" id="suspensionright">
+    <ul>
+        <li><a class="Alitalk"></a></li>
+        <li><a class="tencentqq"></a></li>
+        <li><a  class="backtotop"></a></li>
+    </ul>
+</div>
+<div id="SelectCheck" style="display: none;">
+</div>
+
+
+<div id="Errorpopup" style="display:none;" >
+</div>
+
+
+<!--div id="suspendedPopupwind" style="display:block;">
+    <div class="suspendedPopupwindcont">
+        <div>
+            <i></i>
+            <span>休息一下</span>
+        </div>
+    </div>
+        <div class="suspendednextdiv">
+            <a class="suspendednext">继续答题</a>
+        </div>
+    </div>
+</div-->
+<div>
+    <div style="width: 1800px; display: none; padding-right: 160px;padding-top:200px"class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" >
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="rego()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img height="50px" width="50px" src="../../../.././vendor/img/coffee.jpg">  <span>休息一下马上回來</span></div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="rego()">结束休息</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<div>
+    <div style="width: 1800px; display: none; padding-right: 160px;padding-top:200px"class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" >
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="rego()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img height="50px" width="50px" src="../../../.././vendor/img/clock.jpg">  <span>   &nbsp;&nbsp;时间到!</span></div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="checkright()">结束考试</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<div>
+    <div style="width: 1800px; display: none; padding-right: 160px;padding-top:200px"class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" >
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="rego()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img height="50px" width="50px" src="../../../.././vendor/img/alter.jpg">  <span>  &nbsp;&nbsp;考试尚未结束,确定退出吗?</span></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="rego()">返回</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="hardgoindex()">结束考试</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<div>
+    <div style="width: 1800px; display: none; padding-right: 160px;padding-top:200px"class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" >
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="rego()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img height="50px" width="50px" src="../../../.././vendor/img/alter.jpg">  <span>  &nbsp;&nbsp;考试尚未结束,确定退出吗?</span></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="rego()">返回</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="checkright()">结束考试</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<div>
+    <div style="width: 1800px; display: none; padding-right: 160px;padding-top:200px"class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" >
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="rego()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img height="50px" width="50px" src="../../../.././vendor/img/alter.jpg">  <span>  &nbsp;&nbsp;考试尚未结束,确定退出吗?</span></div>
+                <div class="modal-footer">
+                    <form method="post" action="http://127.0.0.1:8090/public/index.php/index/index/usertest" id="testform" onsubmit="return sendtoserver();">
+                        <input type="hidden" name="errnum" id="err1" value="" />
+                        <input type="hidden" name="rightnum" id="right1"   value="" />
+                        <input type="hidden" name="ptype" id="ptype" value=""/>
+                        <input type="hidden" name="testtime" id="time1" value=""/>
+                        <!--data-dismiss="modal" aria-hidden="true"-->
+                        <button type="submit" class="btn btn-primary" aria-hidden="true" onclick="checkright()">交卷</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<div id="detailReport">
+
+</div>
+</body>
+</html>

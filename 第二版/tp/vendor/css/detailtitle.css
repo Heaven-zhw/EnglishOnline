@@ -1,0 +1,1866 @@
+@charset "utf-8";
+/* CSS Document */
+
+.chapContent {
+    position: relative;
+    min-height: 810px;
+}
+
+.contentleft {
+    float: left;
+    width: 900px;
+}
+
+.contentright {
+    float: right;
+    width: 281px;
+    z-index: 0;
+}
+
+.contentlefttop {
+    background: #FFF;
+    padding-left: 20px;
+    padding-top: 26px;
+    padding-bottom: 20px;
+    clear: both;
+    overflow: auto;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+
+.contentlefttop i {
+    background: #ff5831;
+    height: 20px;
+    width: 4px;
+    display: block;
+    float: left;
+    margin-top: 4px;
+}
+
+.contentlefttop h2 {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.contentlefttop img {
+    padding-right: 5px;
+}
+
+.contentlefttop span.contentlefttopspan {
+    display: block;
+    font-size: 12px;
+    color: #999999;
+    padding-top: 14px;
+}
+
+.contentleftscore {
+    height: 150px;
+}
+
+.contentleftscorecont {
+    background: #FFF;
+    height: 100px;
+    border: 1px solid #eee;
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.contentleftscorecont h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.contentleftscoreshow {
+    font-size: 14px;
+    color: #666;
+    padding-top: 30px;
+}
+
+.contentleftscoreshow li {
+    float: left;
+    padding-right: 20px;
+}
+
+.contentleftscoreshow li span {
+    color: #ff5831;
+    padding-right: 5px;
+    padding-left: 3px;
+}
+
+.contentleftcont {
+    border: 1px solid #eee;
+    background: #FFF;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+}
+
+.contentleftconttitletype {
+    padding-top: 30px;
+}
+
+.contentleftconttitletype h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.contentleftconttitletype span {
+    font-size: 12px;
+    color: #999;
+    padding-top: 10px;
+}
+
+.DetailTitlecontent {
+    border: 1px solid #eee;
+}
+
+.DetailTitletitle {
+    clear: both;
+    overflow: auto;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.DetailTitletitlecont {
+    font-size: 16px;
+    color: #444444;
+}
+
+.DetailTitletitlecont h4 {
+    line-height: 28px;
+    background-color: #f9f9fa;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: lighter;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.DetailTitletitlecont h4 i {
+    color: #ff5831;
+    font-style: normal;
+    line-height: 28px;
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+}
+
+.DetailTitletitlecont > h4 span {
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-left: 5px;
+}
+
+.DetailTitletitlecont ul {
+    padding-left: 35px;
+    padding-right: 45px;
+    padding-top: 20px; /*padding-bottom: 25px;*/
+}
+
+.DetailTitletitlecont ul li {
+    padding-bottom: 10px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-left: 10px;
+    clear: both;
+    overflow: auto;
+}
+
+.DetailTitletitlecont ul li:hover {
+    background-color: #f9f9fa;
+}
+
+.DetailTitletitlecont ul li i {
+    font-style: normal;
+    line-height: 32px;
+    color: #4680fe;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #4680fe;
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 25px;
+}
+
+.DetailTitletitlecont ul li span {
+    color: #66676b;
+    display: inline-block;
+    padding-top: 5px;
+    width: 720px;
+}
+
+.DetailTitletitlecont ul .cont-topic-answer-this i {
+    color: #fff;
+    background-color: #4680fe;
+}
+
+
+
+.DetailTitletitleanswer {
+    padding-left: 45px;
+    clear: both;
+    overflow: auto;
+    padding-bottom: 5px;
+    width: 475px;
+}
+
+.DetailTitletitleanswer ul li {
+    height: 35px;
+    width: 75px;
+    padding-right: 20px;
+    float: left;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.DetailTitletitleanswer ul li a {
+    height: 28px;
+    width: 55px;
+    background: #e8f5fb;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 0 0 #fff, /*左边阴影*/ 0 0 0 #FFF, /*顶部阴影*/ 0 2px 2px #ccc, /*底部阴影*/ 2px 0 2px #ccc; /*右边阴影*/
+    color: #666;
+    padding-top: 7px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.DetailTitletitleanswer ul li a.DetailTitletitleansweronclick {
+    background: #0ca0ed;
+    color: #FFF;
+}
+
+.DetailTitletitleanswer ul li a i {
+    margin-top: 3px;
+}
+
+.DetailTitletitleanswer ul li a i.DetailTitletitleanswerChoice {
+    margin-right: 10px;
+    background: url(../image/DetailTitle_MultipleChoice.png) no-repeat 0px -23px;
+    height: 19px;
+    width: 14px;
+    display: block;
+    float: left;
+}
+
+.DetailTitletitleanswer ul li a i.DetailTitletitleanswerChoice2 {
+    background: url(../image/DetailTitle_MultipleChoice.png) no-repeat 0px 0px;
+}
+
+.DetailTitletitleactive { /*position: absolute; right: 20px; bottom: 25px;*/
+    clear: both;
+    overflow: auto;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: 25px; /* width: 350px;*/
+}
+
+.DetailTitletitleactive ul li {
+    float: right;
+    padding-left: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    line-height: 19px;
+    display: block; /*width:85px;*/
+    height: 20px;
+}
+
+.DetailTitletitleactive ul li span {
+    float: right;
+    display: block;
+    background: #FFF;
+}
+
+.DetailTitletitleactive ul li span.parsing2 {
+    color: #ff5831
+}
+
+.DetailTitletitleactive ul li span.collectioning2 {
+    color: #ff5831
+}
+
+.DetailTitletitleactive ul li span.Erroring2 {
+    color: #ff5831
+}
+
+.DetailTitletitleactive ul li i.packupparsing {
+    background: url(../image/DetailTitle_parsing.png) no-repeat right center;
+    display: block;
+    float: right;
+    height: 19px;
+    width: 11px;
+    padding-right: 5px;
+}
+
+.DetailTitletitleactive ul li i.collectionontology {
+    background: url(../image/DetailTitle_collection.png) no-repeat;
+    display: block;
+    float: right;
+    height: 19px;
+    width: 19px;
+    padding-left: 5px;
+}
+
+.DetailTitletitleactive ul li i.Errorcorrection {
+    background: url(../image/DetailTitle_errorcorrection.png) no-repeat;
+    display: block;
+    float: right;
+    height: 19px;
+    width: 19px;
+    padding-left: 5px;
+}
+
+.DetailTitletitleactive ul li i.textparsingicon {
+    background: url(../image/text-parsing.png) no-repeat;
+    display: block;
+    float: right;
+    height: 19px;
+    width: 19px;
+    padding-left: 5px;
+}
+
+.DetailTitletitleactive ul li i.videoresolutionicon {
+    background: url(../image/video-resolution.png) no-repeat;
+    display: block;
+    float: right;
+    height: 20px;
+    width: 20px;
+    padding-left: 5px;
+}
+
+.DetailTitletitleactive ul li i.packupparsing2 {
+    background: url(../image/DetailTitle_parsing3.png) no-repeat right center;
+}
+
+.DetailTitletitleactive ul li i.collectionontology2 {
+    background: url(../image/DetailTitle_collection2.png) no-repeat;
+}
+
+.DetailTitletitleactive ul li i.Errorcorrection2 {
+    background: url(../image/DetailTitle_errorcorrection2.png) no-repeat;
+}
+
+.DetailTitletitleactive ul li i.packupparsing3 {
+    background: url(../image/DetailTitle_parsing2.png) no-repeat right center;
+}
+
+.DetailTitletitleactive ul li i.packupparsing4 {
+    background: url(../image/DetailTitle_parsing4.png) no-repeat right center;
+}
+
+
+.DetailTitleparsing {
+    background: #fff6f4;
+    border: 1px solid #ff5831;
+    padding: 20px;
+    display: none;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.DetailTitleparsing2 {
+    display: block;
+}
+
+.DetailTitleparsinganswer {
+    font-size: 14px;
+    color: #666;
+}
+
+.DetailTitleparsinganswer ul li {
+    padding-bottom: 20px;
+    display: block;
+    clear: both;
+    overflow: auto;
+}
+
+.DetailTitleparsinganswer ul li span {
+    display: block;
+    float: left;
+    padding-right: 20px;
+    color: #666666;
+    font-weight: bold;
+}
+
+.DetailTitleparsinganswer ul li b {
+    color: #0ca0ed;
+}
+
+.DetailTitleparsinganswer ul li a {
+    display: block;
+    float: left;
+    max-width: 670px;
+    color: #666;
+}
+
+.DetailTitleparsinganswer ul li a:hover {
+    color: #666;
+}
+
+.DetailTitleparsingnotes {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 20px;
+    display: block;
+    clear: both;
+    overflow: auto;
+}
+
+.DetailTitleparsingnotes span {
+    display: block;
+    float: left;
+    padding-right: 20px;
+    color: #666666;
+    font-weight: bold;
+}
+
+.DetailTitleparsingnotes a {
+    display: block;
+    float: left;
+    color: #0ca0ed;
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    border: 1px solid #0ca0ed;
+    border-radius: 25px;
+}
+
+.DetailTitleparsingnotes a.takenotes i {
+    background: url(../image/DetailTitle_takenotes2.png) no-repeat 29px bottom;
+    display: block;
+    float: left;
+    height: 18px;
+    width: 18px;
+    padding-top: 6px;
+    padding-left: 35px;
+}
+
+.DetailTitleparsingnotes a.takenotes2 {
+    color: #FFF;
+    background: #0ca0ed;
+}
+
+.DetailTitleparsingnotes a.takenotes2 i {
+    background: url(../image/DetailTitle_takenotes.png) no-repeat 29px bottom;
+}
+
+.DetailTitleparsingnotes a:hover {
+    color: #0ca0ed;
+}
+
+.DetailTitleparsingnotes a.netfriendnotes {
+    text-align: center;
+    margin-left: 20px;
+    color: #ff5831;
+    border-color: #ff5831;
+}
+
+.DetailTitleparsingnotes a.netfriendnotes2 {
+    color: #FFF;
+    background: #ff5831;
+}
+
+.DetailTitleparsingnotes a.takenotes2:hover {
+    color: #fff;
+}
+
+.DetailTitleparsingtakenotes {
+    height: 190px;
+    width: 780px;
+    position: relative;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.DetailTitleparsingtakenotes2 {
+    display: block;
+}
+
+.DetailTitleparsingtakenotes textarea {
+    height: 130px;
+    width: 768px;
+    resize: none;
+    border: 1px solid #ff5831;
+    padding-left: 5px;
+    padding-top: 5px;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+}
+/*placeholder字体颜色,居中*/
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #cccccc; /*text-align: center;*/
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cccccc; /*text-align: center;*/
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cccccc;
+    opacity: 1; /*text-align: center;*/
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #cccccc !important; /*text-align: center;*/
+    font-size: 14px;
+!important;
+    font-family: "Microsoft Yahei";
+!important;
+}
+
+.DetailTitleparsingtakenotes span {
+    font-size: 12px;
+    color: #999;
+    padding-top: 10px;
+    display: block;
+    float: left;
+}
+
+.takenotesbotton {
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+}
+
+.takenotesbotton a {
+    height: 30px;
+    width: 80px;
+    border-radius: 25px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    display: block;
+    float: right;
+}
+
+.takenotesbotton a.takenotesreset {
+    border: 1px solid #CCC;
+    color: #666666;
+    margin-right: 20px;
+}
+
+.takenotesbotton a.takenotesrefer {
+    color: #fff;
+    background: #0ca0ed;
+    border: 1px solid #0ca0ed;
+}
+
+.DetailTitlenetfriendnotes {
+    border: 1px solid #ff5831;
+    background: #FFF;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    padding-left: 18px;
+    display: none;
+}
+
+.DetailTitlenetfriendnotes2 {
+    display: block;
+}
+
+.netfriendnotescont {
+    clear: both;
+    border-bottom: 1px dashed #CCC;
+    overflow: auto;
+    position: relative;
+    padding-bottom: 40px;
+    padding-top: 18px;
+}
+
+.netfriendnotescont span {
+    display: block;
+    font-size: 14px;
+}
+
+.netfriendnotescont span img {
+    padding-right: 10px;
+}
+
+.netfriendnotescont span.netfriendname {
+    color: #0ca0ed;
+}
+
+.netfriendnotescont span.netfriendname i {
+    color: #999;
+    font-size: 12px;
+    font-style: normal;
+    padding-left: 20px;
+}
+
+.netfriendnotescont span.netfriendcontent {
+    color: #666;
+    padding-left: 50px;
+}
+
+.netfriendassiston {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+}
+
+.netfriendassiston a {
+    font-size: 14px;
+    color: #666666;
+}
+
+.netfriendassiston a.netfriendpraise {
+    background: url(../image/DetailTitle_praise.png) no-repeat left;
+    padding-left: 24px;
+    padding-right: 20px;
+}
+
+.netfriendassiston a.netfriendstamp {
+    background: url(../image/DetailTitle_stamp.png) no-repeat left;
+    padding-left: 24px;
+}
+
+.netfriendassiston a.netfriendpraise2 {
+    background: url(../image/DetailTitle_praise2.png) no-repeat left;
+    color: #0ca0ed;
+}
+
+.netfriendassiston a.netfriendstamp2 {
+    background: url(../image/DetailTitle_stamp2.png) no-repeat left;
+    color: #0ca0ed;
+}
+
+.DetailTitlenetfriendnotes .DetailTitlenetfriendnotesnot {
+    height: 182px;
+    text-align: center;
+}
+
+.DetailTitlenetfriendnotes .DetailTitlenetfriendnotesnot i {
+    height: 84px;
+    text-align: center;
+    background: url(../image/DetailTitle_notnetfriendnotes.png) no-repeat center bottom;
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.DetailTitlenetfriendnotes .DetailTitlenetfriendnotesnot span {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+}
+
+
+.DetailTitletitlecontmoreselect {
+    font-size: 16px;
+    color: #444444;
+}
+
+.DetailTitletitlecontmoreselect h4 {
+    line-height: 28px;
+    background-color: #f9f9fa;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: lighter;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.DetailTitletitlecontmoreselect h4 i {
+    color: #ff5831;
+    font-style: normal;
+    line-height: 28px;
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+}
+
+.DetailTitletitlecontmoreselect h4 span {
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-left: 5px;
+}
+
+.DetailTitletitlecontmoreselect ul {
+    padding-left: 35px;
+    padding-right: 45px;
+    padding-top: 20px; /*padding-bottom: 25px; */
+}
+
+.DetailTitletitlecontmoreselect ul li {
+    padding-bottom: 10px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-left: 10px;
+    clear: both;
+    overflow: auto;
+}
+
+.DetailTitletitlecontmoreselect ul li:hover {
+    background-color: #f9f9fa;
+}
+
+.DetailTitletitlecontmoreselect ul li i {
+    font-style: normal;
+    line-height: 32px;
+    color: #4680fe;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #4680fe;
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    float: left;
+}
+
+.DetailTitletitlecontmoreselect ul li span {
+    color: #66676b;
+    display: inline-block;
+    padding-top: 5px;
+    width: 720px;
+}
+
+.DetailTitletitlecontmoreselect ul .cont-topic-answer-this i {
+    color: #fff;
+    background-color: #4680fe;
+}
+
+
+
+.DetailTitletitleanswermoreselect {
+    padding-left: 45px;
+    clear: both;
+    overflow: auto;
+    padding-bottom: 5px;
+    width: 475px;
+}
+
+.DetailTitletitleanswermoreselect ul li {
+    height: 35px;
+    width: 75px;
+    padding-right: 20px;
+    float: left;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.DetailTitletitleanswermoreselect ul li a {
+    height: 28px;
+    width: 55px;
+    background: #e8f5fb;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 0 0 #fff, /*左边阴影*/ 0 0 0 #FFF, /*顶部阴影*/ 0 2px 2px #ccc, /*底部阴影*/ 2px 0 2px #ccc; /*右边阴影*/
+    color: #666;
+    padding-top: 7px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.DetailTitletitleanswermoreselect ul li a.DetailTitletitleansweronclick {
+    background: #0ca0ed;
+    color: #FFF;
+}
+
+.DetailTitletitleanswermoreselect ul li a i {
+    margin-top: 3px;
+}
+
+.DetailTitletitleanswermoreselect ul li a i.DetailTitletitleanswerChoice {
+    margin-right: 10px;
+    background: url(../image/DetailTitle_multiselect.png) no-repeat 0px -23px;
+    height: 19px;
+    width: 14px;
+    display: block;
+    float: left;
+}
+
+.DetailTitletitleanswermoreselect ul li a i.DetailTitletitleanswerChoice2 {
+    background: url(../image/DetailTitle_multiselect.png) no-repeat 0px 0px;
+}
+
+
+.DetailTitletitlecontShort {
+    font-size: 16px;
+    color: #444444;
+}
+
+.DetailTitletitlecontShort h4 {
+    line-height: 28px;
+    background-color: #f9f9fa;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: lighter;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.DetailTitletitlecontShort h4 i {
+    color: #ff5831;
+    font-style: normal;
+    line-height: 28px;
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+}
+
+.DetailTitletitlecontShort > h4 span {
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-left: 5px;
+}
+
+.DetailTitletitlecontShort ul {
+    padding-left: 35px;
+    padding-right: 45px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.DetailTitletitlecontShort ul li {
+    padding-bottom: 10px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-left: 10px;
+    clear: both;
+    overflow: auto;
+}
+
+.DetailTitletitlecontShort ul li:hover {
+    background-color: #f9f9fa;
+}
+
+.DetailTitletitlecontShort ul li i {
+    font-style: normal;
+    line-height: 32px;
+    color: #4680fe;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #4680fe;
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    float: left;
+}
+
+.DetailTitletitlecontShort ul li span {
+    color: #66676b;
+    display: inline-block;
+    padding-top: 5px;
+    width: 720px;
+}
+
+.DetailTitletitlecontShort ul .cont-topic-answer-this i {
+    color: #fff;
+    background-color: #4680fe;
+}
+
+
+.Shortanswertextarea {
+    clear: both;
+    overflow: auto; /* padding-bottom: 50px;*/
+    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+    position: relative;
+}
+
+.Shortanswertextarea textarea {
+    height: 130px;
+    width: 757px;
+    resize: none;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.Shortanswertextarea .emptyhint {
+    position: absolute;
+    left: 50px;
+    top: 25px;
+}
+
+.contentleftcontupordown {
+    clear: both;
+    overflow: auto;
+    padding-top: 40px;
+    padding-left: 325px;
+}
+
+.contentleftcontupordown span {
+    display: block;
+    padding-right: 20px;
+    float: left;
+}
+
+.contentleftcontupordown span input {
+    font-size: 14px;
+    color: #cccccc;
+    height: 35px;
+    width: 95px;
+    border: 1px solid #cccccc;
+    display: block;
+    border-radius: 25px;
+    text-align: center;
+    float: left;
+    background: #FFF;
+    cursor: pointer;
+}
+
+.contentleftcontupordown span input:hover {
+    color: #0ca0ed;
+    border: 1px solid #0ca0ed;
+}
+
+.contentleftcontupordown span input:active {
+    color: #fff;
+    border: 1px solid #0ca0ed;
+    background: #0ca0ed;
+}
+
+.contentleftconthidden {
+    display: none;
+}
+/**隐藏内容***/
+
+
+/*******连线题*********/
+.leftmatch {
+    float: left;
+    max-width: 360px;
+}
+
+.rightmatch {
+    float: left;
+    max-width: 360px;
+}
+
+.matchleftanswer {
+    overflow: auto;
+    width: 95px;
+    float: left;
+    z-index: 999;
+}
+
+.matchleftanswer li {
+    clear: both;
+    float: none;
+}
+
+.DTmatchanswer ul.matchleftanswer li a {
+    clear: both;
+    float: none;
+    width: 50px;
+    padding-left: 25px;
+}
+
+.matchrightanswer {
+    overflow: auto;
+    width: 95px;
+    float: left;
+    z-index: 999;
+}
+
+.matchrightanswer li {
+    clear: both;
+    float: none;
+}
+
+.DTmatchanswer ul.matchrightanswer li a {
+    clear: both;
+    float: none;
+    width: 50px;
+    padding-left: 25px;
+}
+
+.DTmatchanswer {
+    padding-left: 45px;
+    clear: both;
+    overflow: auto;
+    padding-bottom: 5px;
+    width: 475px;
+}
+
+.DTmatchanswer ul li {
+    height: 35px;
+    width: 75px;
+    padding-right: 20px;
+    float: left;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.DTmatchanswer ul li a {
+    height: 28px;
+    width: 55px;
+    background: #e8f5fb;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 0 0 #fff, /*左边阴影*/ 0 0 0 #FFF, /*顶部阴影*/ 0 2px 2px #ccc, /*底部阴影*/ 2px 0 2px #ccc; /*右边阴影*/
+    color: #666;
+    padding-top: 7px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.DTmatchanswer ul li a.DetailTitletitleansweronclick {
+    background: #0ca0ed;
+    color: #FFF;
+}
+
+.DTmatchanswer ul li a.DetailTitletitleansweronclick2 {
+    background: #0ca0ed;
+    color: #FFF;
+}
+
+#myCanvas {
+    z-index: 0;
+    width: 230px;
+    height: 180px;
+    float: left;
+    margin-left: -18px;
+}
+/** opacity: 0.2;filter:Alpha(opacity=80)**/
+
+
+
+
+/*****右边模块*******/
+.contentright .doproblemstime {
+    background: #0ca0ed;
+    height: 80px;
+    width: 280px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contentright .doproblemstime h1 {
+    color: #FFF;
+    font-size: 20px;
+    line-height: 60px;
+    padding-left: 20px;
+}
+
+.contentright .doproblemstime .doproblemstimeright {
+    width: 185px;
+    padding-left: 15px;
+    border-right: 1px dotted #FFF;
+    float: left;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contentright .doproblemstime .doproblemstimeright span {
+    display: block;
+    font-size: 14px;
+    color: #FFF;
+    float: left;
+    width: 200px;
+}
+
+.contentright .doproblemstime .doproblemstimeright span b {
+    font-size: 20px;
+    font-weight: normal;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.contentright .doproblemstime .doproblemstimeleft {
+    text-align: center;
+    float: left;
+    padding-top: 3px;
+    padding-left: 25px;
+}
+
+.contentright .doproblemstime .doproblemstimeleft div {
+    cursor: pointer;
+    clear: both;
+    overflow: auto;
+}
+
+.contentright .doproblemstime .doproblemstimeleft div i {
+    background: url(../picture/stop.jpg ) no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.contentright .doproblemstime .doproblemstimeleft div span {
+    font-size: 14px;
+    color: #FFF;
+    padding-top: 5px;
+    display: block;
+}
+
+.contentright .doproblemstime .doproblemstimeleft div:hover i {
+    background: url(../picture/stop.jpg) no-repeat;
+}
+
+.contentright .doproblemstime .doproblemstimeleft div:hover span {
+    color: #ff5831;
+}
+
+.contentright .doproblemsset {
+    background: #fff;
+    height: 127px;
+    width: 238px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+
+.contentright .doproblemsset .doproblemssetmodel div {
+    height: 30px;
+    width: 235px;
+    border: 1px solid #cccccc;
+    border-radius: 25px;
+    clear: both;
+    overflow: auto;
+}
+
+.contentright .doproblemsset .doproblemssetmodel div span {
+    font-size: 14px;
+    line-height: 30px;
+    color: #666666;
+    text-align: center;
+    width: 114px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+.contentright .doproblemsset .doproblemssetmodel div span:first-child {
+    border-right: 1px solid #cccccc;
+}
+
+.contentright .doproblemsset .doproblemssetmodel div span.doproblemssetmodelclick {
+    color: #0ca0ed;
+}
+
+.contentright .doproblemsset .doproblemssetanswer {
+    clear: both;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
+.contentright .doproblemsset .doproblemssetanswer select {
+    height: 30px;
+    width: 235px;
+}
+
+
+.contentright .doproblemsset .doproblemssetfont {
+    clear: both;
+    overflow: auto;
+}
+
+.contentright .doproblemsset .doproblemssetfont span {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.contentright .doproblemsset .doproblemssetfont a {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    float: left;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.contentright .doproblemsset .doproblemssetfont a.doproblemssetfontclick {
+    color: #0ca0ed;
+    border: 1px solid #0ca0ed;
+}
+
+.DetailTitletitlecontfontsize1 {
+    font-size: 18px;
+}
+
+.DetailTitletitlecontfontsize2 {
+    font-size: 16px;
+}
+
+.DetailTitletitlecontfontsize3 {
+    font-size: 14px;
+}
+
+.contentright .doproblemssheet {
+    background: #fafafa;
+    clear: both;
+    height: 32px;
+    overflow: auto;
+    padding-top: 8px;
+    padding-left: 20px;
+    border: 1px solid #eeeeee;
+}
+
+.contentright .doproblemssheet span {
+    padding-right: 15px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.contentright .doproblemssheet b {
+    font-size: 14px;
+    color: #ff5831;
+    font-weight: normal;
+}
+
+.contentright .doproblemsnumber {
+    background: #fff;
+    max-height: 290px;
+    clear: both;
+    overflow: auto;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+    padding: 20px;
+    position: relative;
+}
+
+
+.contentright .doproblemsnumber .dopronumbertype {
+    font-size: 16px;
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.contentright .doproblemsnumber .dopronumbercont {
+    clear: both;
+    overflow: auto;
+}
+
+.contentright .doproblemsnumber .dopronumbercont li {
+    height: 35px;
+    width: 35px;
+    margin-right: 7px;
+    border: 1px solid #c3e5f6;
+    float: left;
+    margin-bottom: 10px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contentright .doproblemsnumber .dopronumbercont li.dopronumberconton1 {
+    background: #f2f2f2;
+    border: 1px solid #c2c2c2;
+}
+
+.contentright .doproblemsnumber .dopronumbercont li.dopronumberconton2 {
+    background: #fff6f4;
+    border: 1px solid #ff5831;
+}
+
+.contentright .doproblemsnumber .dopronumbercont li.dopronumberconton3 {
+    background: #f6fdfa;
+    border: 1px solid #56e198;
+}
+
+.contentright .doproblemsnumber .dopronumbercont li.dopronumberconton4 {
+    background: #f3fafe;
+    border: 1px solid #0ca0ed;
+}
+
+.contentright .doproblemsactive {
+    clear: both;
+    overflow: auto;
+}
+
+.contentright .doproblemsactive div {
+    font-size: 16px;
+    line-height: 44px;
+    color: #FFF;
+    text-align: center;
+    height: 44px;
+    width: 280px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contentright .doproblemsactive .doproblemsactivered {
+    background: #ff5831;
+}
+
+.contentright .doproblemsactive .doproblemsactiveblue {
+    background: #0ca0ed;
+}
+
+
+.contentright .doproblemsstate {
+    background: #fff;
+    position: relative;
+    clear: both;
+    overflow: auto;
+    margin-top: -39px;
+    width: 93%;
+    text-align: center;
+    height: 39px;
+    margin-left: 1px;
+}
+
+.contentright .doproblemsstate2 {
+    display: none;
+}
+
+.contentright .doproblemsstate font {
+    border-top: 1px dashed #eeeeee;
+    width: 85%;
+    margin: auto;
+    display: block;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate {
+    clear: both;
+    overflow: auto;
+    padding-bottom: 8px;
+    text-align: center;
+    padding-top: 7px;
+    *padding-top: 0px;
+    background: #fff;
+    margin: auto;
+    *margin-top: -15px;
+    width: auto;
+    display: inline-block;
+    height: 20px;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont {
+    float: left;
+    font-size: 14px;
+    color: #666;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont i {
+    display: block;
+    height: 18px;
+    width: 18px;
+    float: left;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont i.statecont1 {
+    background: #eefaed;
+    border: 1px solid #58ca4b;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont i.statecont2 {
+    background: #fff6f4;
+    border: 1px solid #ff5831;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont i.statecont3 {
+    background: #f6fdfa;
+    border: 1px solid #56e198;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont i.statecont4 {
+    background: #ffffff;
+    border: 1px solid #c3e5f6;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont i.statecont5 {
+    background: #f2f2f2;
+    border: 1px solid #c2c2c2;
+}
+
+.contentright .doproblemsstate .doproblemsnumberstate .doproblemsnumberstatecont span {
+    line-height: 18px;
+    padding-left: 5px;
+}
+
+
+
+
+
+
+/********最有变悬浮**********/
+.suspensionright {
+    height: 155px;
+    width: 46px;
+    position: fixed;
+    right: 0px;
+    bottom: 200px;
+}
+
+.suspensionright ul li {
+    background: no-repeat right top;
+    display: block;
+    height: 51px;
+    width: 46px;
+    cursor: pointer;
+}
+
+.suspensionright ul li a {
+    background: no-repeat right top;
+    display: block;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+}
+
+.suspensionright ul li .Alitalk {
+    background: url(../image/DetailTitle_Alitalk.png);
+}
+
+.suspensionright ul li .tencentqq {
+    background: url(../image/DetailTitle_tencentqq.png);
+}
+
+.suspensionright ul li .backtotop {
+    background: url(../image/DetailTitle_backtotop.png);
+}
+
+.suspensionright ul li .Alitalk:hover {
+    background: url(../image/DetailTitle_Alitalk.png) no-repeat right -56px;
+}
+
+.suspensionright ul li .tencentqq:hover {
+    background: url(../image/DetailTitle_tencentqq.png) no-repeat right -56px;
+}
+
+.suspensionright ul li .backtotop:hover {
+    background: url(../image/DetailTitle_backtotop.png) no-repeat right -56px;
+}
+
+
+
+/***纠错弹窗内容***/
+.Errorpopupcont {
+    height: 320px;
+    width: 520px;
+    padding-left: 20px;
+}
+
+.Errorpopupcont span {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    padding-top: 20px;
+}
+
+.Errorpopupcont .Errorpopupli {
+    clear: both;
+    overflow: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.Errorpopupcont .Errorpopupli li {
+    float: left;
+    width: 130px;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.Errorpopupcont .Errorpopupli li label {
+    background: url(../image/DetailTitle_multiselect.png) no-repeat left -21px;
+    height: 15px;
+    width: 14px;
+    cursor: pointer;
+}
+
+.Errorpopupcont .Errorpopupli li label.checkboxclick {
+    background: url(../image/DetailTitle_multiselect.png) no-repeat left 3px;
+    height: 15px;
+    width: 14px;
+}
+
+.Errorpopupcont .Errorpopupli li label .Errorcheckbox {
+    opacity: 0;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+
+.Errorpopupcont textarea {
+    height: 100px;
+    width: 480px;
+    resize: none;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+    padding-top: 5px;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.Errorpopupcont .Errorpopupbtn {
+    text-align: center;
+    clear: both;
+    overflow: auto;
+    padding-top: 20px;
+    padding-left: 155px;
+}
+
+.Errorpopupcont .Errorpopupbtn .Errorcancel {
+    height: 30px;
+    width: 80px;
+    border: 1px solid #ccc;
+    line-height: 30px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #666;
+    border-radius: 25px;
+}
+
+.Errorpopupcont .Errorpopupbtn .Errorsubmit {
+    height: 30px;
+    width: 80px;
+    border: 1px solid #0ca0ed;
+    line-height: 30px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #FFF;
+    background: #0ca0ed;
+    border-radius: 25px;
+    margin-left: 20px;
+}
+
+/******暂停弹窗*********/
+.suspendedPopupwindcont {
+    height: 170px;
+    width: 235px;
+    background: #FFF;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 85px;
+}
+
+.suspendedPopupwindcont div {
+    clear: both;
+    overflow: auto;
+}
+
+.suspendedPopupwindcont div i {
+    background: url(../image/DetailTitle_takearest.png);
+    display: block;
+    height: 62px;
+    width: 60px;
+    float: left;
+}
+
+.suspendedPopupwindcont div span {
+    font-size: 16px;
+    color: #666;
+    display: block;
+    float: left;
+    line-height: 42px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.suspendedPopupwindcont .suspendednext {
+    display: block;
+    font-size: 14px;
+    color: #FFF;
+    background: #0ca0ed;
+    height: 30px;
+    width: 110px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.suspendedPopupwindcont .suspendednextdiv {
+    clear: both;
+    padding-top: 30px;
+    overflow: auto;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/********提交，交卷，下次继续，返回弹窗***************/
+.submitcont {
+    clear: both;
+    height: 230px;
+    width: 480px;
+    overflow: auto;
+    background: #FFF;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.submitcont .submitimg {
+    clear: both;
+    overflow: auto;
+}
+
+.submitcont .submitimg i {
+    background: url(../image/DetailTitle_activetip.png) no-repeat center;
+    height: 80px;
+    width: 100%;
+    display: block;
+}
+
+.submitcont span {
+    font-size: 14px;
+    color: #666666;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.submitcont .submitbtn {
+    font-size: 16px;
+    color: #666;
+    clear: both;
+    padding-left: 145px;
+    overflow: auto;
+}
+
+.submitcont .submitbtn a {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    display: block;
+    height: 28px;
+    width: 80px;
+    margin-right: 20px;
+    border: 1px solid #cccccc;
+    float: left;
+    line-height: 28px;
+    border-radius: 25px;
+}
+
+.submitcont .submitbtn a.submitsubmit {
+    color: #FFF;
+    background: #0ca0ed;
+    border: 1px solid #0ca0ed;
+}
+
+
+/*网友笔记分页*/
+.paging {
+    clear: both;
+    overflow: auto;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.paginator {
+    padding: 10px 20px 10px 0;
+    margin: auto;
+    display: block;
+    width: auto;
+}
+
+.paginator a {
+    padding: 6px 14px;
+    border: 1px solid #E5E5E5;
+    background: #fff;
+    text-decoration: none;
+    margin-right: 2px;
+    font-size: 15px;
+    font-family: Microsoft yahei;
+    font-weight: normal;
+    border-radius: 5px;
+}
+
+.paginator a:visited {
+    padding: 1px 6px;
+    border: 1px solid #E5E5E5;
+    background: #fff;
+    text-decoration: none;
+}
+
+.paginator .cpb {
+    color: #FFF;
+    padding: 6px 14px;
+    background: #0ca0ed;
+    border: 1px solid #0ca0ed;
+    font-size: 15px;
+    font-weight: normal;
+    border-radius: 5px;
+}
+
+.paginator a {
+    color: #666;
+}
+
+.paginator a:hover {
+    text-decoration: none;
+    border: 1px solid #0ca0ed;
+    color: #FFF;
+    background: #0ca0ed;
+}
+
+.paginator a[disabled='disabled'] {
+    color: #d4d4d4;
+    border-color: #d4d4d4;
+}
+
+.paginator a[disabled='disabled']:hover {
+    color: #d4d4d4;
+    border-color: #d4d4d4;
+    background-color: White;
+}
+
+
+/*答题报告*/
+#detailReport {
+    display: none;
+}
+
+.dReport-contleftcont {
+    background: #FFF;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.dReport-paperstat {
+    float: left;
+}
+
+.dReport-paperstat i {
+    background: url(../image/report-score.png) no-repeat;
+    display: block;
+    height: 262px;
+    width: 262px;
+    line-height: 237px;
+    text-align: center;
+    font-size: 60px;
+    color: #cfebfb;
+    font-style: normal;
+}
+
+.dReport-paperstat i b {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: normal;
+    padding-left: 5px;
+}
+
+
+.dReport-questitu {
+    border: 1px solid #eee;
+    width: 650px;
+    margin-bottom: 40px;
+    float: left;
+    display: block;
+    margin-right: 30px;
+}
+
+.dReport-questitu li {
+    line-height: 50px;
+    min-height: 50px;
+    font-size: 14px;
+}
+
+.dReport-questitu li.questitutitle2 {
+    background: #fafafa;
+}
+
+.dReport-questitu li.questitutitle {
+    font-size: 16px;
+    background: #f3f3f3;
+}
+
+.dReport-questitu li span {
+    width: 130px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    color: #333333;
+}
+
+.dReport-questitu li span font {
+    color: #85ca4b;
+}
+
+.dReport-questitu li span em {
+    color: #ff5831;
+}
+
+
+.dReport-papershare {
+    height: 45px;
+    width: 420px;
+    font-size: 16px;
+    display: block;
+    padding-bottom: 10px;
+    overflow: auto;
+    clear: both;
+    margin: auto;
+}
+
+.dReport-papershare li {
+    float: left;
+}
+
+.dReport-papershare li a {
+    line-height: 36px;
+    height: 36px;
+    width: 150px;
+    background: #0ca0ed;
+    text-align: center;
+    margin-right: 25px;
+    margin-left: 25px;
+    border-radius: 25px;
+    color: #ffffff;
+    display: block;
+}
+
+.dReport-papershare li a:hover {
+    background-color: #18b1f1;
+}
+
+.dReport-papershare li a:active {
+    background-color: #0888e6;
+}
+
+.dReport-papershare li.dReport-shareshow a {
+    background: #ff5831;
+    position: relative;
+}
+
+.dReport-papershare li.dReport-shareshow a:hover {
+    background: #ff714a;
+}
+
+.dReport-papershare li.dReport-shareshow a:active {
+    background: #ff4121;
+}
