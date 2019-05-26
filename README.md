@@ -1,6 +1,8 @@
 ## 简介
 
 本实验后台基于thinkphp5制作前端基于bootstrap和jQuery和来自github上的网页模板制作，数据库采用mysql，服务器采用Apache，本实验项目基本完成了对常见英语选择题的练习用途，包括单选，支持冒题（完型阅读等）
+## 使用方法
+使用phpstudy，php5.4版本以上,使用8090端口绑定,根目录设计为"最终版"压缩包解压后的文件夹,数据库名称为test1,也可以根据自己希望更改application/database.php配置文件
 
 ## 功能介绍
 
