@@ -7,3 +7,8 @@ urldetect需要在代码中指定爬取的链接，quescrawl爬取数据库还�
 sql文件是数据库的内容，里面没有题目的信息，需要先爬取URL再爬内容
 
 crawl.py、crawl2.py、crawl3.py在爬虫中没有使用，为测试爬取规则的文件
+
+
+## 2.2版说明
+
+将阅读文本表和完型文本表从原文本表分离，并修改了quesdetect和quescrawl中有关原文本表id的部分

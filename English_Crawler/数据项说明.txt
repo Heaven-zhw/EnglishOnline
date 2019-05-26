@@ -25,7 +25,7 @@ school:学校
 5.urlinfo 题目链接表(爬虫用)
 id:题目链接id,主键自增
 typeid:题型id
-quesurl:题目链接
+quesurl:题目链接，唯一
 flag:是否爬取的标志位，0未爬取，1已爬取，2爬取错误
 gaintime:获取链接的时间
 
@@ -93,19 +93,27 @@ texts:文本内容
 qnum:一篇文本的题目数
 typeid:文本对应的题目类型
 
-12.usertest:用户做题情况表
+12.textcloze:完型文本表
+id:表id，主键自增
+textid:文本id，唯一
+text:文本内容
+qnum:一篇文本的题目数
+typeid:文本对应的题目类型
+
+
+13.usertest:用户做题情况表
 id:表id，主键自增
 uid:用户id
 pid:套题序号
 num:做题题目数
-stime:做题时间（分钟）
+stime:做题花费的时间（分钟）
 errnum:错题数
 ptype: 即typeid，题型id
 studyday:做题日期
 weekdays:做题星期号
 
-13.voc：词汇表
-id:表id，主键自增
+14.voc：词汇表
+id:单词id，主键自增
 vname：单词内容
 explains：单词意思
 

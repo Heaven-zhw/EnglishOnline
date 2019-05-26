@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50553
 Source Host           : localhost:3306
-Source Database       : engonline2
+Source Database       : engonline3
 
 Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-05-25 16:37:13
+Date: 2019-05-26 11:49:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `alogin` (
   `pwd` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for aupload
@@ -123,6 +123,20 @@ CREATE TABLE `singleques` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `fromid` (`fromid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+-- Table structure for textcloze
+-- ----------------------------
+DROP TABLE IF EXISTS `textcloze`;
+CREATE TABLE `textcloze` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `textid` int(11) DEFAULT NULL,
+  `text` text,
+  `qnum` int(11) DEFAULT NULL,
+  `typeid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `textid` (`textid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for textread

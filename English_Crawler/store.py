@@ -7,13 +7,14 @@ host="127.0.0.1"                #数据库地址
 user="root"                     #用户名
 passwd="root"                   #密码
 charset="utf8"                  #字符编码
-database="engonline2"           #数据库
+database="engonline3"           #数据库
 urlTable="urlinfo"              #存题目链接的数据表表名
 singlequesTable="singleques"    #存单选题目的数据表表名
 clozequesTable="clozeques"      #存单选题目的数据表表名
 readquesTable="readques"        #存单选题目的数据表表名
 
-textTable="textread"            #存放文本的数据表表名
+readtextTable="textread"        #存放阅读文本的数据表表名
+clozetextTable="textcloze"      #存放完型文本的数据表表名
 
 #----------------Mysql操作---------------------------------
 #存链接
@@ -103,12 +104,12 @@ def updateErrorFlag(fromid):
     finally:
         conn.close()
 
-#读取文章表的最大textid
-def readMaxTextid():
+#读取阅读文章表的最大textid
+def readMaxReadTextid():
     try:
         conn = pymysql.connect(host=host, user=user, password=passwd, db=database, charset=charset)
         cur = conn.cursor()
-        sql = "select max(textid) from {}".format(textTable)
+        sql = "select max(textid) from {}".format(readtextTable)
         cur.execute(sql)
         num = cur.fetchone()
 
@@ -124,6 +125,28 @@ def readMaxTextid():
     finally:
         conn.close()
 
+#读取阅读文章表的最大textid
+def readMaxClozeTextid():
+    try:
+        conn = pymysql.connect(host=host, user=user, password=passwd, db=database, charset=charset)
+        cur = conn.cursor()
+        sql = "select max(textid) from {}".format(clozetextTable)
+        cur.execute(sql)
+        num = cur.fetchone()
+
+        if num[0]==None: #不存在textid
+            return 0
+        else:
+            return int(num[0])
+    except Exception as e:
+        print("读取最大textid出错！")
+        print(e)
+        conn.rollback()
+        return -1
+    finally:
+        conn.close()
+
+#存储阅读文本和题目
 def saveReading(result):
 
     try:
@@ -131,7 +154,7 @@ def saveReading(result):
         cur = conn.cursor()
 
         sql1="INSERT ignore INTO {} (textid,texts,qnum,typeid) " \
-              "VALUE(%s,%s,%s,%s)".format(textTable)
+              "VALUE(%s,%s,%s,%s)".format(readtextTable)
         cur.execute(sql1, result[0])
         conn.commit()
 
@@ -162,13 +185,14 @@ def saveReading(result):
     finally:
         conn.close()
 
+#存储完型文本和题目
 def saveCloze(result):
     try:
         conn = pymysql.connect(host=host, user=user, password=passwd, db=database, charset=charset)
         cur = conn.cursor()
-
-        sql1="INSERT ignore INTO {} (textid,texts,qnum,typeid) " \
-              "VALUE(%s,%s,%s,%s)".format(textTable)
+        #注意text字段和阅读的texts不同
+        sql1="INSERT ignore INTO {} (textid,text,qnum,typeid) " \
+              "VALUE(%s,%s,%s,%s)".format(clozetextTable)
         cur.execute(sql1, result[0])
         conn.commit()
 
@@ -197,7 +221,6 @@ def saveCloze(result):
         conn.rollback()
     finally:
         conn.close()
-
 
 
 

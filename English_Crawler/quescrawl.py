@@ -94,7 +94,7 @@ class LookUp(threading.Thread):
 
 #爬取hrefList中的链接，传递的数量取决于detect模块
 #由于url存储的是相对路径，需要传递domain补全
-def get_all(domain,hreflist,textid):
+def get_all(domain,hreflist,textidDict):
     # 定义链接队列/得到链接的锁/给予链接的锁为全局变量
     global queue_href, mutex_href_get, mutex_href_put
     queue_href = queue.Queue()
@@ -103,6 +103,8 @@ def get_all(domain,hreflist,textid):
     num = 6
     mutex_href_get = threading.Lock()
     mutex_href_put = threading.Lock()
+    readtextid = textidDict['readtextid']
+    clozetextid = textidDict['clozetextid']
 
     #URL加入线程队列
     for item in hreflist:
@@ -111,12 +113,20 @@ def get_all(domain,hreflist,textid):
         typeid=item[1]
         viewHref=domain+str(item[2])
 
-        #如果是非文本类型，typeid不会使用到
-        if typeid==READING_TYPE or typeid==CLOZE_TYPE:
-            textid+=1
+        #如果是非阅读或完型，readtextid和clozetextid不会使用到
+        if typeid==READING_TYPE:
+            readtextid+=1
+            # 用空格分隔开放入队列
+            queue_href.put(" ".join((str(fromid), str(typeid), viewHref, str(readtextid))))
 
-        #用空格分隔开放入队列
-        queue_href.put(" ".join((str(fromid),str(typeid),viewHref,str(textid))))
+        elif typeid == CLOZE_TYPE:
+            clozetextid+=1
+            # 用空格分隔开放入队列
+            queue_href.put(" ".join((str(fromid), str(typeid), viewHref, str(clozetextid))))
+
+        #其他题型（单选题）,textid用0填充
+        else:
+            queue_href.put(" ".join((str(fromid), str(typeid), viewHref, str(0))))
 
     for i in range(0, num):
         threads.append(LookUp())
@@ -127,8 +137,10 @@ def get_all(domain,hreflist,textid):
     for thread in threads:
         thread.join()
 
+    textidDict.update(readtextid=readtextid)
+    textidDict.update(clozetextid=clozetextid)
     #返回文章当前最大序号
-    return textid
+    return textidDict
 
 
 
