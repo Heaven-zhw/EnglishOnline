@@ -3,14 +3,17 @@ import pymysql
 import traceback
 
 #----------------数据库配置---------------------------------
-host="127.0.0.1"          #数据库地址
-user="root"                   #用户名
-passwd="root"               #密码
-charset="utf8"                #字符编码
-database="engonline"             #数据库
-urlTable="urlinfo"            #存题目链接的数据表表名
-squesTable="squestion"    #存题目内容数据表表名
-textTable="readtext"     #存放文本的数据表表名
+host="127.0.0.1"                #数据库地址
+user="root"                     #用户名
+passwd="root"                   #密码
+charset="utf8"                  #字符编码
+database="engonline2"           #数据库
+urlTable="urlinfo"              #存题目链接的数据表表名
+singlequesTable="singleques"    #存单选题目的数据表表名
+clozequesTable="clozeques"      #存单选题目的数据表表名
+readquesTable="readques"        #存单选题目的数据表表名
+
+textTable="textread"            #存放文本的数据表表名
 
 #----------------Mysql操作---------------------------------
 #存链接
@@ -64,7 +67,7 @@ def saveSingleChoice(result):
         cur = conn.cursor()
 
         sql1="INSERT ignore INTO {} (fromid,title,choiceA,choiceB,choiceC,choiceD,answer,analysis,typeid) " \
-              "VALUE(%s,%s,%s,%s,%s,%s,%s,%s,%s)".format(squesTable)
+              "VALUE(%s,%s,%s,%s,%s,%s,%s,%s,%s)".format(singlequesTable)
         cur.execute(sql1, result)
         conn.commit()
 
@@ -121,30 +124,18 @@ def readMaxTextid():
     finally:
         conn.close()
 
-def saveReadingOrCloze(result):
-    '''
-    sql1 = "INSERT ignore INTO {} (textid,text,qnum) " \
-           "VALUE(%s,%s,%s)".format(textTable)
-    print(sql1)
+def saveReading(result):
 
-    sql2 = "INSERT ignore INTO {} (%s) VALUE (%s)".format(squesTable)
-    for qusDict in result[1]:
-        key_cols = ", ".join('{}'.format(k) for k in qusDict.keys())
-        val_cols = ", ".join('`{}`'.format(k) for k in qusDict.values())
-
-        realsql2 = sql2 % (key_cols, val_cols)
-        print(realsql2)
-    '''
     try:
         conn = pymysql.connect(host=host, user=user, password=passwd, db=database, charset=charset)
         cur = conn.cursor()
 
-        sql1="INSERT ignore INTO {} (textid,text,qnum) " \
-              "VALUE(%s,%s,%s)".format(textTable)
+        sql1="INSERT ignore INTO {} (textid,texts,qnum,typeid) " \
+              "VALUE(%s,%s,%s,%s)".format(textTable)
         cur.execute(sql1, result[0])
         conn.commit()
 
-        sql2 = "INSERT ignore INTO {} (%s) VALUE (%s)".format(squesTable)
+        sql2 = "INSERT ignore INTO {} (%s) VALUE (%s)".format(readquesTable)
         for qusDict in result[1]:
             fie_cols = ", ".join('`{}`'.format(k) for k in qusDict.keys())
             val_cols = ", ".join('%({})s'.format(k) for k in qusDict.keys())
@@ -170,6 +161,44 @@ def saveReadingOrCloze(result):
         conn.rollback()
     finally:
         conn.close()
+
+def saveCloze(result):
+    try:
+        conn = pymysql.connect(host=host, user=user, password=passwd, db=database, charset=charset)
+        cur = conn.cursor()
+
+        sql1="INSERT ignore INTO {} (textid,texts,qnum,typeid) " \
+              "VALUE(%s,%s,%s,%s)".format(textTable)
+        cur.execute(sql1, result[0])
+        conn.commit()
+
+        sql2 = "INSERT ignore INTO {} (%s) VALUE (%s)".format(clozequesTable)
+        for qusDict in result[1]:
+            fie_cols = ", ".join('`{}`'.format(k) for k in qusDict.keys())
+            val_cols = ", ".join('%({})s'.format(k) for k in qusDict.keys())
+
+            realsql2 = sql2 % (fie_cols, val_cols)
+
+            #print(realsql2)
+            cur.execute(realsql2,qusDict)
+            conn.commit()
+
+        fromid=int(result[1][0]['fromid'])
+        #更新标志位为已经爬取成功
+        sql3="update {} set flag=1 where id=%s".format(urlTable)
+        cur.execute(sql3,fromid)
+        conn.commit()
+
+        print("网页信息存储成功！")
+    except Exception as e:
+        print("存储网页信息时出错！")
+        #print(e)
+        traceback.print_exc()
+        conn.rollback()
+    finally:
+        conn.close()
+
+
 
 
 '''
@@ -202,7 +231,5 @@ if __name__ =='__main__':
     #saveContent(1,result)
     print(readUrls())
     print(readMaxTextid())
-    result=[[1, '<p>We are warned by our teachers not to waste time because time<u> 21 </u>will never return. I think it quite<u> 22. </u>What does time look<u> 23?</u> Nobody knows, and we can’t see it or touch it and no<u> 24 </u>of money can buy it. Time is abstract(抽象的), so we have to <u>\xa025</u>about it.<br/> Time passes very quickly. Some students say they don’t have<u> 26</u>time to review their lessons. It is<u> 27 </u>they don’t know how to make use of their time. They waste it in going to theatres or playing, and <u>28 </u>other useless things. Why do we study everyday? Why do we work? Why do most people <u>29 </u>take buses instead of walking? The answer is very <u>30 </u>.We wish to save time because time is<u>31.</u><br/> Today we are living in the 21<sup>st</sup> century. We <u>32 </u>time as life. When a person dies, his life ends. Since life is short, we must <u>33 </u>our time and energy to our study so that we <u>34 </u>be able to work and live well in the future. Laziness is the <u>35 </u>of time, for it not only brings us <u>36,</u> but also does other <u>37 </u>to us. If it is necessary for us to do our work today, <u>38 </u>we do it today and not <u>39 </u>it until tomorrow. Remember that time is much more<u> 40.</u><br/></p>', 20], [{'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题1】', 'choiceA': 'lost', 'choiceB': 'passed', 'choiceC': 'missed', 'choiceD': 'used', 'answer': 'A', 'analysis': '【小题1】A 形容词辨析。Lost失去的；句意：失去的时间再也不会回来。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题2】', 'choiceA': 'important', 'choiceB': 'true', 'choiceC': 'interesting', 'choiceD': 'usual', 'answer': 'B', 'analysis': '【小题2】B 形容词辨析。A重要；B对的；C有趣的；D通常的；我认为失去的时间在也不回来是正确的。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题3】', 'choiceA': 'for ', 'choiceB': 'like ', 'choiceC': 'after', 'choiceD': 'over', 'answer': 'B', 'analysis': '【小题3】B 固定词组。Look like…看起来想…；没有人知道时间看起来像…'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题4】', 'choiceA': 'amount', 'choiceB': 'quality', 'choiceC': 'quantity', 'choiceD': 'price', 'answer': 'A', 'analysis': '【小题4】A 名词辨析。No amount of指没有什么钱可以购买时间。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题5】', 'choiceA': 'think ', 'choiceB': 'imagine', 'choiceC': 'examine', 'choiceD': 'check', 'answer': 'B', 'analysis': '【小题5】B 动词辨析。A思考；B想象；C检查；D核对；时间很抽象，我们不得不去想象它样子。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题6】', 'choiceA': 'spare ', 'choiceB': 'free', 'choiceC': 'enough', 'choiceD': 'much', 'answer': 'C', 'analysis': '【小题6】C 形容词辨析。A多余的；B空闲的；C足够的；D多的；一些学生说他们没有足够的时间来复习功课。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题7】', 'choiceA': 'that', 'choiceB': 'why', 'choiceC': 'because', 'choiceD': 'certain', 'answer': 'C', 'analysis': '【小题7】C 连词辨析。句意：那时因为他们不知道如何利用时间。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题8】', 'choiceA': 'doing', 'choiceB': 'making', 'choiceC': 'taking', 'choiceD': 'getting', 'answer': 'A', 'analysis': '【小题8】A 上下文结构。And是并列连词，这里的doing与上文的doing是对应关系。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题9】', 'choiceA': 'needn’t', 'choiceB': 'have to', 'choiceC': 'had better', 'choiceD': 'would rather', 'answer': 'B', 'analysis': '【小题9】B 词义辨析。A不需要；B不得不；C最好；D宁愿；很多人不得不坐公交车而不是步行。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题10】', 'choiceA': 'easy', 'choiceB': 'simple', 'choiceC': 'stupid', 'choiceD': 'interesting', 'answer': 'B', 'analysis': '【小题10】B 形容词辨析。A容易；B简单；C愚蠢；D有趣；答案很简单，我们要节省时间。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题11】', 'choiceA': 'worthless', 'choiceB': 'priceless', 'choiceC': 'ready', 'choiceD': 'little', 'answer': 'B', 'analysis': '【小题11】B 形容词辨析。A不值钱；B无价的；C准备好的，愿意的；D少的；句意：我们要节省时间，因为时间是无价的。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题12】', 'choiceA': 'look upon', 'choiceB': 'agree ', 'choiceC': 'think', 'choiceD': 'believe', 'answer': 'A', 'analysis': '【小题12】A 固定词组。Look on…as…把…看做…'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题13】', 'choiceA': 'spend', 'choiceB': 'give', 'choiceC': 'set', 'choiceD': 'devote', 'answer': 'D', 'analysis': '【小题13】D 固定词组;devote…to…把…用于…我们要把时间和精力放在学习上，以便未来我们也许可生活学习的更好。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题14】', 'choiceA': 'must', 'choiceB': 'should', 'choiceC': 'may', 'choiceD': 'would', 'answer': 'C', 'analysis': '【小题14】C情态动词辨析.A 必须；B应该；C也许；D会；句意同38解释。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题15】', 'choiceA': 'helper', 'choiceB': 'thief', 'choiceC': 'friend', 'choiceD': 'teacher', 'answer': 'B', 'analysis': '【小题15】B 名词辨析。A帮助者；B小偷；C朋友；D老师；懒惰是时间的小偷。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题16】', 'choiceA': 'wealth', 'choiceB': 'health', 'choiceC': 'failure', 'choiceD': 'illness', 'answer': 'C', 'analysis': '【小题16】C 名词辨析。A财富；B健康；C失败；D疾病；它不仅给我们带来失败而且还会对我们有其它方面的伤害。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题17】', 'choiceA': 'danger', 'choiceB': 'harm', 'choiceC': 'trouble', 'choiceD': 'difficulty', 'answer': 'B', 'analysis': '【小题17】B 固定词组。对…有害do harm to…'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题18】', 'choiceA': 'help', 'choiceB': 'make', 'choiceC': 'have', 'choiceD': 'let', 'answer': 'D', 'analysis': '【小题18】D 语法分析。Let引导祈使句。让我们从今天开始做起，不要留到明天。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题19】', 'choiceA': 'keep', 'choiceB': 'remain', 'choiceC': 'manage', 'choiceD': 'leave', 'answer': 'D', 'analysis': '【小题19】D 动词辨析。A保持；B任然；C设法；D留下；指我们不能把工作留到明天。'}, {'fromid': 1111, 'typeid': 7, 'textid': 1, 'title': '【小题20】', 'choiceA': 'valuable', 'choiceB': 'expensive', 'choiceC': 'worth', 'choiceD': 'rich', 'answer': 'A', 'analysis': '【小题20】A 形容词辨析。A贵重；B昂贵；B值得的；D富有的；句意：记得时间更为贵重。'}]]
 
-    saveReadingOrCloze(result)
 

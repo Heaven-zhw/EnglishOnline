@@ -70,7 +70,7 @@ def get_all(href_need_page,startpage,endpage):
     queue_href = Queue()
     threads = []
     # 线程数量
-    num = 2
+    num = 4
     mutex_href_get = threading.Lock()
     mutex_href_put = threading.Lock()
     # 拼接好页码的链接放入队列

@@ -13,6 +13,6 @@ href_need_page=href+"&page="
 href_need_page3=href3+"&page="
 href_need_page4=href4+"&page="
 
-#get_all(href_need_page,1,100)
+get_all(href_need_page,1,50)
 get_all(href_need_page3,1,20)
 get_all(href_need_page4,1,10)

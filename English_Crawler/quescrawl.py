@@ -8,7 +8,7 @@ import queue
 import threading
 from basic import getHTMLText
 from store import readUrls,updateErrorFlag
-from store import saveSingleChoice,saveReadingOrCloze
+from store import saveSingleChoice,saveReading,saveCloze
 from mylog import logContentConnectError,logContentFormError
 
 headers = {
@@ -71,8 +71,10 @@ class LookUp(threading.Thread):
                     #按题型存储数据库
                     if typeid==SINGLE_CHOICE_TYPE:
                         saveSingleChoice(result)
-                    elif typeid in [READING_TYPE,CLOZE_TYPE]:
-                        saveReadingOrCloze(result)
+                    elif typeid ==READING_TYPE:
+                        saveReading(result)
+                    elif typeid ==CLOZE_TYPE:
+                        saveCloze(result)
 
                 elif result == 1: #连接错误
                     logContentConnectError(viewHref)
@@ -98,7 +100,7 @@ def get_all(domain,hreflist,textid):
     queue_href = queue.Queue()
     threads = []
     # 线程数量
-    num = 4
+    num = 6
     mutex_href_get = threading.Lock()
     mutex_href_put = threading.Lock()
 
@@ -265,7 +267,7 @@ def getReadingOrCloze(fromid,typeid,viewHref,textid):
         print(viewHref)
         return 2
 
-    textList = [textid, readingText, quesNum]
+    textList = [textid, readingText, quesNum,typeid]
     result=[textList,quesList]
     return result
 
